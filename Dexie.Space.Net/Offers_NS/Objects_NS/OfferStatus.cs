@@ -1,5 +1,4 @@
-﻿
-namespace Dexie.Space.Net.Offers_NS
+﻿namespace Dexie.Space.Net.Offers_NS.Objects_NS
 {
     /// <summary>
     /// An enumeration that represents the status of an offer.

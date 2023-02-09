@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dexie.Space.Net.Offers_NS
+namespace Dexie.Space.Net.Offers_NS.Objects_NS
 {
     /// <summary>
     /// An enumeration that represents the sorting options for offers.

@@ -1,4 +1,4 @@
-﻿namespace Dexie.Space.Net.Offers_NS
+﻿namespace Dexie.Space.Net.Offers_NS.Objects_NS
 {
     /// <summary>
     /// This class represents a serializable token as part of an offer on the DEXIE platform. 

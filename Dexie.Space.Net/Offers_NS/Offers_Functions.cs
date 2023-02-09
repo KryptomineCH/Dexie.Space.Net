@@ -1,4 +1,6 @@
 ﻿using System.Text.Json;
+using Dexie.Space.Net.Offers_NS.Objects_NS;
+using Dexie.Space.Net.Offers_NS.Response_NS;
 
 namespace Dexie.Space.Net.Offers_NS
 {
@@ -12,7 +14,7 @@ namespace Dexie.Space.Net.Offers_NS
         /// <returns>The result of posting the offer, as a string.</returns>
         public static async Task<PostOffer_Response> PostOffer_Async(string offer, bool dropOnly = false)
         {
-            string endpoint = "/v1/offers";
+            string endpoint = "offers";
             string dropOnlyStr = dropOnly ? "true" : "false";
             string jsonPayload = "{\"offer\":\"" + offer + "\",\"drop_only\":\"" + dropOnlyStr + "\"}";
             string result = await SendCustomMessage_Async(endpoint, jsonPayload);
@@ -31,6 +33,31 @@ namespace Dexie.Space.Net.Offers_NS
             data.Wait();
             return data.Result;
         }
-
+        /// <summary>
+        /// Asynchronously retrieves offers based on the specified search parameters.
+        /// </summary>
+        /// <param name="rpc">An object representing the search parameters to use when retrieving offers.</param>
+        /// <returns>A string representing the result of the search operation.</returns>
+        public static async Task<GetOffers_Response> GetOffers_Async(SearchOffer_RPC rpc)
+        {
+            var endpoint = "offers";
+            string[] queryParams = rpc.BuildQueryParams();
+            var queryString = string.Join("&", queryParams);
+            var url = endpoint + "?" + queryString;
+            string result = await SendCustomMessage_Async(url);
+            return JsonSerializer.Deserialize<GetOffers_Response>(result);
+        }
+        /// <summary>
+        /// This function is used to retrieve a list of offers from the API, based on the search criteria specified in the SearchOffer_RPC class.
+        /// The function sends a GET request to the API endpoint with the search criteria encoded in the URL.
+        /// </summary>
+        /// <param name="rpc">The SearchOffer_RPC class containing the search criteria for the offers</param>
+        /// <returns>The response from the API containing the list of offers matching the search criteria</returns>
+        public static GetOffers_Response GetOffers_Sync(SearchOffer_RPC rpc)
+        {
+            Task<GetOffers_Response> data = Task.Run(() => GetOffers_Async(rpc));
+            data.Wait();
+            return data.Result;
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Dexie.Space.Net.Offers_NS
+﻿using Dexie.Space.Net.Offers_NS.Objects_NS;
+
+namespace Dexie.Space.Net.Offers_NS.Response_NS
 {
     /// <summary>
     /// represents the response of the API which includes an offer

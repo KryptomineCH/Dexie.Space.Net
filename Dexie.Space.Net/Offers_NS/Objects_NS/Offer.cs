@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace Dexie.Space.Net.Offers_NS
+namespace Dexie.Space.Net.Offers_NS.Objects_NS
 {
     /// <summary>
     /// This class represents a serializable offer made on the DEXIE platform. 
@@ -19,6 +19,10 @@ namespace Dexie.Space.Net.Offers_NS
         /// The status of the offer (e.g. 4 for completed)
         /// </summary>
         public int status { get; set; }
+        /// <summary>
+        /// the offer string which might be saved to a file or pasted into the chia client
+        /// </summary>
+        public string offer { get; set; }
 
         /// <summary>
         /// The date the offer was found
