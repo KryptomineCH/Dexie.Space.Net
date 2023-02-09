@@ -6,6 +6,33 @@
     <Nullable>enable</Nullable>
     <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/KryptomineCH/Dexie.Space.Net</PackageProjectUrl>
+    <Title>Dexie.Space.Net</Title>
+    <Version>1.0.0</Version>
+    <Authors>KryptoMine.ch, Julian Bechtold</Authors>
+    <Description>Dexie.Space.Net is a NuGet package designed for interacting with the decentralized Dexie.space exchange. This package provides a convenient and easy-to-use API for accessing the exchange's decentralized platform, allowing users to trade various digital assets on the blockchain in a secure and decentralized manner. With Dexie.Space.Net, developers can write code that interacts with the exchange to perform tasks such as buying and selling assets, checking the order book, and managing their own wallet. The package is built on top of the popular Dexie.space exchange, ensuring a seamless integration and enabling users to take advantage of its robust infrastructure and security features.</Description>
+    <Copyright>KryptoMine.ch</Copyright>
+    <RepositoryUrl>https://github.com/KryptomineCH/Dexie.Space.Net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>api;chia;dexie;offers;exchange</PackageTags>
+    <PackageReleaseNotes>implemented the offers interface.</PackageReleaseNotes>
+    <PackageLicenseExpression> MIT-Modern-Variant</PackageLicenseExpression>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0|AnyCPU'">
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
