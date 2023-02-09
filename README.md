@@ -16,7 +16,7 @@ string response = await Offers_Client.SendCustomMessage_Async(endpoint, jsonPayl
 
 2. b) Call any method in Offer_Client to use predefined metods:
 ```
-string offer = "offer1qqz83wcsltt6wcmqvpsxygqqwc7hynr6hum6e0mnf72sn7uvvkpt68eyumkhelprk0adeg42nlelk2mpafs8tkhg2qa9qmxpk8znenf...";
+string offer = "offer1qqz83wcsltt6wcmqvpsxygqqwc7hynr6hum6e0mnf72sn7uvvkpt68eyumkhqa9qmxpk8znenf...";
 PostOffer_Response result = PostOffer_Sync(offer);
 ```
 
