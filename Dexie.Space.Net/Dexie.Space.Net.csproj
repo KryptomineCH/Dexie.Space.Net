@@ -4,6 +4,15 @@
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/KryptomineCH/Dexie.Space.Net</PackageProjectUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
