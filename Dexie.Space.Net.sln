@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dexie.Space.Net", "Dexie.Space.Net\Dexie.Space.Net.csproj", "{48A10C7D-9477-4BD1-BCFF-FEBAC674AD61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dexie.Space.Net_UnitTests", "Dexie.Space.Net_UnitTests\Dexie.Space.Net_UnitTests.csproj", "{25F6005C-7A01-4E5F-AD77-C27F3DB00F2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48A10C7D-9477-4BD1-BCFF-FEBAC674AD61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A10C7D-9477-4BD1-BCFF-FEBAC674AD61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A10C7D-9477-4BD1-BCFF-FEBAC674AD61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A10C7D-9477-4BD1-BCFF-FEBAC674AD61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25F6005C-7A01-4E5F-AD77-C27F3DB00F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25F6005C-7A01-4E5F-AD77-C27F3DB00F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25F6005C-7A01-4E5F-AD77-C27F3DB00F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25F6005C-7A01-4E5F-AD77-C27F3DB00F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA197EEA-2EBB-4220-B9EA-0AADC857AD9B}
+	EndGlobalSection
+EndGlobal
