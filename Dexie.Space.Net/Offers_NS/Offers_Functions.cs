@@ -59,5 +59,31 @@ namespace Dexie.Space.Net.Offers_NS
             data.Wait();
             return data.Result;
         }
+        /// <summary>
+        /// Asynchronously retrieves a specific offer based on its identifier.
+        /// </summary>
+        /// <param name="id">The identifier of the offer to retrieve.</param>
+        /// <returns>An instance of the `GetOffer_Response` class representing the result of the retrieval operation.</returns>
+        public static async Task<GetOffer_Response> GetOffer_Async(string id)
+        {
+            var endpoint = $"offers/{id}";
+            var url = endpoint;
+
+            // Send a custom message to retrieve the offer data
+            string result = await SendCustomMessage_Async(url);
+
+            // Deserialize the result into an instance of the GetOffer_Response class
+            return JsonSerializer.Deserialize<GetOffer_Response>(result);
+        }
+        /// Synchronously retrieves a specific offer based on its identifier.
+        /// </summary>
+        /// <param name="id">The identifier of the offer to retrieve.</param>
+        /// <returns>An instance of the `GetOffer_Response` class representing the result of the retrieval operation.</returns>
+        public static GetOffer_Response GetOffer_Sync(string id)
+        {
+            Task<GetOffer_Response> data = Task.Run(() => GetOffer_Async(id));
+            data.Wait();
+            return data.Result;
+        }
     }
 }
