@@ -43,7 +43,7 @@ to use it, use one of the following files:
 
 example usage in wpf:
 ``` xaml
-<Image Source="pack://application:,,,/Dexie.Space.Net;component/Resources/dexie_medium.png" Height="0.6cm"></Ima
+<Image Source="pack://application:,,,/Dexie.Space.Net;component/Resources/dexie_medium.png"></Ima
 ```
 
 ## Configuration
