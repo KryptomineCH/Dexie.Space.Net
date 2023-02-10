@@ -38,6 +38,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\dexie.svg" />
+    <None Remove="Resources\duck.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\dexie.svg" />
+    <EmbeddedResource Include="Resources\duck.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
