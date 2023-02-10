@@ -20,6 +20,32 @@ string offer = "offer1qqz83wcsltt6wcmqvpsxygqqwc7hynr6hum6e0mnf72sn7uvvkpt68eyum
 PostOffer_Response result = PostOffer_Sync(offer);
 ```
 
+## Icons
+![image](https://user-images.githubusercontent.com/117320700/218058335-e64cce21-37f3-4e3b-ad66-9462be14ea44.png)
+
+Icons are packed into the DLL. You can find the official kit here:
+https://github.com/dexie-space/dexie-kit
+
+to use it, use one of the following files:
+``` powershell
+# blue
+/Resources/dexie_medium.png
+/Resources/duck_medium.png
+
+# black
+/Resources/dexie_black_medium.png
+/Resources/duck_black_medium.png
+
+# white
+/Resources/dexie_white_medium.png
+/Resources/duck_white_medium.png
+```
+
+example usage in wpf:
+``` xaml
+<Image Source="pack://application:,,,/Dexie.Space.Net;component/Resources/dexie_medium.png" Height="0.6cm"></Ima
+```
+
 ## Configuration
 The following properties of the Offers_Client class can be configured to customize the behavior of the library:
 
