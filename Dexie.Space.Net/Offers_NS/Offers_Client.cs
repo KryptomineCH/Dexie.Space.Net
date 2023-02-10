@@ -126,5 +126,33 @@ namespace Dexie.Space.Net.Offers_NS
             data.Wait();
             return data.Result;
         }
+        /// <summary>
+        /// This function retrieves the content of a url
+        /// </summary>
+        /// <param name="endpoint">The endpoint to request from.</param>
+        /// <returns>The response from the server as a string.</returns>
+        public static async Task<string> GetContent_Async(string endpoint)
+        {
+            AwaitRateLimit();
+            string usedAddress = ProdURI;
+            if (UseTestnet) usedAddress = TestURI;
+            using (var request = new HttpRequestMessage(new HttpMethod("GET"), usedAddress + endpoint))
+            {
+                var response = await _Client.SendAsync(request);
+                response.EnsureSuccessStatusCode();
+                return await response.Content.ReadAsStringAsync(); ;
+            }
+        }
+        /// <summary>
+        /// This function retrieves the content of a url
+        /// </summary>
+        /// <param name="endpoint">The endpoint to request from.</param>
+        /// <returns>The response from the server as a string.</returns>
+        public static async Task<string> GetContent_sync(string endpoint)
+        {
+            Task<string> data = Task.Run(() => GetContent_Async(endpoint));
+            data.Wait();
+            return data.Result;
+        }
     }
 }

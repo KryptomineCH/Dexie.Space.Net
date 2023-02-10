@@ -25,7 +25,7 @@ namespace Dexie.Space.Net.Offers_NS.Response_NS
         /// <summary>
         /// The offer field is an instance of the Offer class
         /// </summary>
-        public Offer offer { get; set; }
+        public Offer_Object offer { get; set; }
 
         /// <summary>
         /// The error field represents an error message if there is any

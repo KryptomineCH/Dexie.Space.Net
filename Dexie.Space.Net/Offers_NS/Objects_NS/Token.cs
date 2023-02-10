@@ -24,6 +24,6 @@
         /// <summary>
         /// The amount of the token involved in the offer
         /// </summary>
-        public int amount { get; set; }
+        public decimal amount { get; set; }
     }
 }

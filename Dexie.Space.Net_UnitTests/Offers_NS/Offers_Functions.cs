@@ -30,5 +30,17 @@ namespace Dexie.Space.Net_UnitTests.Offers_NS
             //Assert.NotNull(result.offer.requested);
             //Assert.Equal(0, result.offer.fees);
         }
+        [Fact]
+        public void  TestGetOffer()
+        {
+            // own offer
+            string offerID = "HBfDkanVUwyiJBwx2jsrFmWKxm7CKjMvhYfqPMoNQQWz";
+
+            // sample offes
+            //string offerID = "HR7aHbCXsJto7iS9uBkiiGJx6iGySxoNqUGQvrZfnj6B";
+
+            GetOffer_Response offer =  Offers_Client.GetOffer_Sync(offerID);
+            { }
+        }
     }
 }

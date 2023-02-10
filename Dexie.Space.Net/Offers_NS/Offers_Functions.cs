@@ -44,7 +44,7 @@ namespace Dexie.Space.Net.Offers_NS
             string[] queryParams = rpc.BuildQueryParams();
             var queryString = string.Join("&", queryParams);
             var url = endpoint + "?" + queryString;
-            string result = await SendCustomMessage_Async(url);
+            string result = await GetContent_Async(url);
             return JsonSerializer.Deserialize<GetOffers_Response>(result);
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Dexie.Space.Net.Offers_NS
             var url = endpoint;
 
             // Send a custom message to retrieve the offer data
-            string result = await SendCustomMessage_Async(url);
+            string result = await GetContent_Async(url);
 
             // Deserialize the result into an instance of the GetOffer_Response class
             return JsonSerializer.Deserialize<GetOffer_Response>(result);
