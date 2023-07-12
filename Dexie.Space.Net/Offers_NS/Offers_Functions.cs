@@ -30,8 +30,8 @@ namespace Dexie.Space.Net.Offers_NS
         public static PostOffer_Response? PostOffer_Sync(string offer, bool dropOnly = false)
         {
             Task<PostOffer_Response?> data = Task.Run(() => PostOffer_Async(offer, dropOnly));
-            data.Wait();
-            return data.Result;
+            PostOffer_Response? result = data.GetAwaiter().GetResult();
+            return result;
         }
         /// <summary>
         /// Asynchronously retrieves offers based on the specified search parameters.
@@ -56,8 +56,8 @@ namespace Dexie.Space.Net.Offers_NS
         public static GetOffers_Response? GetOffers_Sync(SearchOffer_RPC rpc)
         {
             Task<GetOffers_Response?> data = Task.Run(() => GetOffers_Async(rpc));
-            data.Wait();
-            return data.Result;
+            GetOffers_Response? result = data.GetAwaiter().GetResult();
+            return result;
         }
         /// <summary>
         /// Asynchronously retrieves a specific offer based on its identifier.
@@ -83,8 +83,8 @@ namespace Dexie.Space.Net.Offers_NS
         public static GetOffer_Response? GetOffer_Sync(string id)
         {
             Task<GetOffer_Response?> data = Task.Run(() => GetOffer_Async(id));
-            data.Wait();
-            return data.Result;
+            GetOffer_Response? result = data.GetAwaiter().GetResult();
+            return result;
         }
     }
 }

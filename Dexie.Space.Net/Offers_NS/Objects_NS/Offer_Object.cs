@@ -24,6 +24,10 @@ namespace Dexie.Space.Net.Offers_NS.Objects_NS
         /// </summary>
         public string? offer { get; set; }
         /// <summary>
+        /// the coins which are involved in the offer
+        /// </summary>
+        public string[]? involved_coins { get; set; }
+        /// <summary>
         /// this dictionary holds the coin ids which are offered
         /// </summary>
         Dictionary<int, string>? offered_coins { get; set; }
@@ -66,15 +70,24 @@ namespace Dexie.Space.Net.Offers_NS.Objects_NS
         /// The tokens being requested as part of the offer
         /// </summary>
         public dynamic[]? requested { get; set; }
-
+        public ulong? fees { get; set; }
         /// <summary>
         /// The fees associated with the offer
         /// </summary>
-        public int? mempool { get; set; }
+        public dynamic? mempool { get; set; }
         /// <summary>
         /// other offers related to this offer
         /// </summary>
         public dynamic[]? related_offers { get; set; }
+        public int? mod_version { get; set; }
+        /// <summary>
+        /// the coins which go into the offer
+        /// </summary>
+        public dynamic? input_coins { get; set; }
+        /// <summary>
+        /// the coins which are created when the offer is accepted
+        /// </summary>
+        public dynamic? output_coins { get; set; }
         /// <summary>
         /// the coins related to this offer
         /// </summary>

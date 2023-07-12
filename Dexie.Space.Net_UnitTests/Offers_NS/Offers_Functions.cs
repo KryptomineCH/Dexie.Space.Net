@@ -1,5 +1,7 @@
 ﻿using Dexie.Space.Net.Offers_NS;
+using Dexie.Space.Net.Offers_NS.Objects_NS;
 using Dexie.Space.Net.Offers_NS.Response_NS;
+using Nito.AsyncEx;
 
 namespace Dexie.Space.Net_UnitTests.Offers_NS
 {
@@ -34,12 +36,20 @@ namespace Dexie.Space.Net_UnitTests.Offers_NS
         public void  TestGetOffer()
         {
             // own offer
-            string offerID = "HBfDkanVUwyiJBwx2jsrFmWKxm7CKjMvhYfqPMoNQQWz";
+            string[] offerIDs = new[] 
+            { 
+                "HBfDkanVUwyiJBwx2jsrFmWKxm7CKjMvhYfqPMoNQQWz",
+                "BE2uoNNidyqJBX3gqcfPm3caYi8HMdvtuEMLBqTLVK7G",
+                "9sYEERW6LwCAMoVmfRCyxbBkSMGRMrfbzSPmrWCRFHWo",
+            };
 
             // sample offes
             //string offerID = "HR7aHbCXsJto7iS9uBkiiGJx6iGySxoNqUGQvrZfnj6B";
-
-            GetOffer_Response offer =  Offers_Client.GetOffer_Sync(offerID);
+            foreach (string id in offerIDs)
+            {
+                GetOffer_Response? offer = Offers_Client.GetOffer_Sync(id);
+            }
+            
             { }
         }
     }
