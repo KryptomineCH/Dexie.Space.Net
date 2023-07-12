@@ -70,7 +70,7 @@ namespace Dexie.Space.Net.Offers_NS.Objects_NS
         /// The tokens being requested as part of the offer
         /// </summary>
         public dynamic[]? requested { get; set; }
-        public ulong? fees { get; set; }
+        public double? fees { get; set; }
         /// <summary>
         /// The fees associated with the offer
         /// </summary>

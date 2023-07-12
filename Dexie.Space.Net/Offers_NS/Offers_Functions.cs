@@ -53,7 +53,7 @@ namespace Dexie.Space.Net.Offers_NS
             catch (JsonException ex)
             {
                 // Wrap the original exception and the JSON string into a new exception.
-                throw new Exception($"Error deserializing JSON: {response}", ex);
+                throw new JsonException($"Error deserializing JSON: {response}", ex);
             }
             return result;
         }
@@ -91,7 +91,7 @@ namespace Dexie.Space.Net.Offers_NS
             catch (JsonException ex)
             {
                 // Wrap the original exception and the JSON string into a new exception.
-                throw new Exception($"Error deserializing JSON: {response}", ex);
+                throw new JsonException($"Error deserializing JSON: {response}", ex);
             }
             return result;
         }
