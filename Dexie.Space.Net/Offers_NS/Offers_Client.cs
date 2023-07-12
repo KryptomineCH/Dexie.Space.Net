@@ -148,7 +148,7 @@ namespace Dexie.Space.Net.Offers_NS
         /// </summary>
         /// <param name="endpoint">The endpoint to request from.</param>
         /// <returns>The response from the server as a string.</returns>
-        public static async Task<string> GetContent_sync(string endpoint)
+        public static string GetContent_sync(string endpoint)
         {
             Task<string> data = Task.Run(() => GetContent_Async(endpoint));
             data.Wait();
