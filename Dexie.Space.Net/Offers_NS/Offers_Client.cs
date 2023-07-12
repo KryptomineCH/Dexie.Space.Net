@@ -12,7 +12,7 @@ namespace Dexie.Space.Net.Offers_NS
         /// this boolean specifies wether the chia testnet or mainnet endpoint should be triggered.
         /// </summary>
         /// <remarks>
-        /// switch between ProdURI & TestURI
+        /// switch between ProdURI and TestURI
         /// </remarks>
         public static bool UseTestnet { get; set; } = false;
         /// <summary>

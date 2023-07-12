@@ -13,7 +13,7 @@ namespace Dexie.Space.Net.Offers_NS.Objects_NS
         /// <summary>
         /// The unique ID of the offer
         /// </summary>
-        public string id { get; set; }
+        public string? id { get; set; }
 
         /// <summary>
         /// The status of the offer (e.g. 4 for completed)
@@ -22,7 +22,7 @@ namespace Dexie.Space.Net.Offers_NS.Objects_NS
         /// <summary>
         /// the offer string which might be saved to a file or pasted into the chia client
         /// </summary>
-        public string offer { get; set; }
+        public string? offer { get; set; }
         /// <summary>
         /// this dictionary holds the coin ids which are offered
         /// </summary>
@@ -79,6 +79,9 @@ namespace Dexie.Space.Net.Offers_NS.Objects_NS
         /// the coins related to this offer
         /// </summary>
         public Coin[]? coins { get; set; }
+        /// <summary>
+        /// wether there are currently counter offers
+        /// </summary>
         public bool? has_bids { get; set; }
         /// <summary>
         /// Returns a JSON string representation of the Offer object.
@@ -113,7 +116,7 @@ namespace Dexie.Space.Net.Offers_NS.Objects_NS
         /// </summary>
         /// <param name="path">The file path to load the Offer object from.</param>
         /// <returns>The Offer object loaded from disk.</returns>
-        public static Offer_Object Load(string path)
+        public static Offer_Object? Load(string path)
         {
             if (!path.EndsWith(".dexieoffer"))
             {

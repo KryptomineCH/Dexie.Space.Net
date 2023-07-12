@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dexie.Space.Net.Offers_NS.Objects_NS
 {
+    /// <summary>
+    /// the rpc to search for offers
+    /// </summary>
     public class SearchOffer_RPC
     {/// <summary>
      /// The status of the offers to include.
@@ -51,6 +54,10 @@ namespace Dexie.Space.Net.Offers_NS.Objects_NS
         /// The number of offers to request per page.
         /// </summary>
         public int? page_size { get; set; }
+        /// <summary>
+        /// builds the query for the request
+        /// </summary>
+        /// <returns></returns>
         public string[] BuildQueryParams()
         {
             var queryParams = new List<string>();
@@ -77,7 +84,7 @@ namespace Dexie.Space.Net.Offers_NS.Objects_NS
 
             if (sort != null)
             {
-                queryParams.Add("sort=" + sort.ToString().ToLower());
+                queryParams.Add("sort=" + sort.ToString()!.ToLower());
             }
 
             if (compact != null)

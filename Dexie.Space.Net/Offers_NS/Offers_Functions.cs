@@ -12,7 +12,7 @@ namespace Dexie.Space.Net.Offers_NS
         /// <param name="offer">A string representation of the offer to be posted to the blockchain.</param>
         /// <param name="dropOnly">A boolean indicating whether the offer should be dropped after completion, or whether it should remain on the blockchain (default is `false`).</param>
         /// <returns>The result of posting the offer, as a string.</returns>
-        public static async Task<PostOffer_Response> PostOffer_Async(string offer, bool dropOnly = false)
+        public static async Task<PostOffer_Response?> PostOffer_Async(string offer, bool dropOnly = false)
         {
             string endpoint = "offers";
             string dropOnlyStr = dropOnly ? "true" : "false";
@@ -27,9 +27,9 @@ namespace Dexie.Space.Net.Offers_NS
         /// <param name="offer">The offer information to be posted</param>
         /// <param name="dropOnly">Flag indicating if the offer should be a drop-only offer</param>
         /// <returns>The response from the API after posting the offer</returns>
-        public static PostOffer_Response PostOffer_Sync(string offer, bool dropOnly = false)
+        public static PostOffer_Response? PostOffer_Sync(string offer, bool dropOnly = false)
         {
-            Task<PostOffer_Response> data = Task.Run(() => PostOffer_Async(offer, dropOnly));
+            Task<PostOffer_Response?> data = Task.Run(() => PostOffer_Async(offer, dropOnly));
             data.Wait();
             return data.Result;
         }
@@ -38,7 +38,7 @@ namespace Dexie.Space.Net.Offers_NS
         /// </summary>
         /// <param name="rpc">An object representing the search parameters to use when retrieving offers.</param>
         /// <returns>A string representing the result of the search operation.</returns>
-        public static async Task<GetOffers_Response> GetOffers_Async(SearchOffer_RPC rpc)
+        public static async Task<GetOffers_Response?> GetOffers_Async(SearchOffer_RPC rpc)
         {
             var endpoint = "offers";
             string[] queryParams = rpc.BuildQueryParams();
@@ -53,9 +53,9 @@ namespace Dexie.Space.Net.Offers_NS
         /// </summary>
         /// <param name="rpc">The SearchOffer_RPC class containing the search criteria for the offers</param>
         /// <returns>The response from the API containing the list of offers matching the search criteria</returns>
-        public static GetOffers_Response GetOffers_Sync(SearchOffer_RPC rpc)
+        public static GetOffers_Response? GetOffers_Sync(SearchOffer_RPC rpc)
         {
-            Task<GetOffers_Response> data = Task.Run(() => GetOffers_Async(rpc));
+            Task<GetOffers_Response?> data = Task.Run(() => GetOffers_Async(rpc));
             data.Wait();
             return data.Result;
         }
@@ -64,7 +64,7 @@ namespace Dexie.Space.Net.Offers_NS
         /// </summary>
         /// <param name="id">The identifier of the offer to retrieve.</param>
         /// <returns>An instance of the `GetOffer_Response` class representing the result of the retrieval operation.</returns>
-        public static async Task<GetOffer_Response> GetOffer_Async(string id)
+        public static async Task<GetOffer_Response?> GetOffer_Async(string id)
         {
             var endpoint = $"offers/{id}";
             var url = endpoint;
@@ -75,13 +75,14 @@ namespace Dexie.Space.Net.Offers_NS
             // Deserialize the result into an instance of the GetOffer_Response class
             return JsonSerializer.Deserialize<GetOffer_Response>(result);
         }
+        /// <summary>
         /// Synchronously retrieves a specific offer based on its identifier.
         /// </summary>
         /// <param name="id">The identifier of the offer to retrieve.</param>
         /// <returns>An instance of the `GetOffer_Response` class representing the result of the retrieval operation.</returns>
-        public static GetOffer_Response GetOffer_Sync(string id)
+        public static GetOffer_Response? GetOffer_Sync(string id)
         {
-            Task<GetOffer_Response> data = Task.Run(() => GetOffer_Async(id));
+            Task<GetOffer_Response?> data = Task.Run(() => GetOffer_Async(id));
             data.Wait();
             return data.Result;
         }

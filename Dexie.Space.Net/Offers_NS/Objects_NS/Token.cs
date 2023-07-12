@@ -9,17 +9,17 @@
         /// <summary>
         /// The unique ID of the token
         /// </summary>
-        public string id { get; set; }
+        public string? id { get; set; }
 
         /// <summary>
         /// The code of the token (e.g. "SBX" for Spacebucks)
         /// </summary>
-        public string code { get; set; }
+        public string? code { get; set; }
 
         /// <summary>
         /// The name of the token
         /// </summary>
-        public string name { get; set; }
+        public string? name { get; set; }
 
         /// <summary>
         /// The amount of the token involved in the offer

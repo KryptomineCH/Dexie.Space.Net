@@ -15,7 +15,10 @@ namespace Dexie.Space.Net.Offers_NS.Response_NS
         /// <summary>
         /// Represents an array of full offer objects.
         /// </summary>
-        public Offer_Object offer { get; set; }
+        public Offer_Object? offer { get; set; }
+        /// <summary>
+        /// contains any error messages of the request
+        /// </summary>
         public string? error { get; set; }
     }
 }

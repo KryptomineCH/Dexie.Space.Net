@@ -30,7 +30,10 @@ namespace Dexie.Space.Net.Offers_NS.Response_NS
         /// <summary>
         /// Represents an array of full offer objects.
         /// </summary>
-        public Offer_Object[] offers { get; set; }
+        public Offer_Object[] offers { get; set; } = Array.Empty<Offer_Object>();
+        /// <summary>
+        /// contains any error messages of the request
+        /// </summary>
         public string? error { get; set; }
     }
 
