@@ -44,8 +44,18 @@ namespace Dexie.Space.Net.Offers_NS
             string[] queryParams = rpc.BuildQueryParams();
             var queryString = string.Join("&", queryParams);
             var url = endpoint + "?" + queryString;
-            string result = await GetContent_Async(url);
-            return JsonSerializer.Deserialize<GetOffers_Response>(result);
+            string response = await GetContent_Async(url);
+            GetOffers_Response? result = null;
+            try
+            {
+                result = JsonSerializer.Deserialize<GetOffers_Response>(response);
+            }
+            catch (JsonException ex)
+            {
+                // Wrap the original exception and the JSON string into a new exception.
+                throw new Exception($"Error deserializing JSON: {response}", ex);
+            }
+            return result;
         }
         /// <summary>
         /// This function is used to retrieve a list of offers from the API, based on the search criteria specified in the SearchOffer_RPC class.
@@ -70,10 +80,20 @@ namespace Dexie.Space.Net.Offers_NS
             var url = endpoint;
 
             // Send a custom message to retrieve the offer data
-            string result = await GetContent_Async(url);
+            string response = await GetContent_Async(url);
 
-            // Deserialize the result into an instance of the GetOffer_Response class
-            return JsonSerializer.Deserialize<GetOffer_Response>(result);
+            // Deserialize the result into an instance of the GetOffer_Response class/
+            GetOffer_Response? result = null;
+            try
+            {
+                result = JsonSerializer.Deserialize<GetOffer_Response>(response);
+            }
+            catch (JsonException ex)
+            {
+                // Wrap the original exception and the JSON string into a new exception.
+                throw new Exception($"Error deserializing JSON: {response}", ex);
+            }
+            return result;
         }
         /// <summary>
         /// Synchronously retrieves a specific offer based on its identifier.

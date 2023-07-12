@@ -44,13 +44,28 @@ namespace Dexie.Space.Net_UnitTests.Offers_NS
             };
 
             // sample offes
-            //string offerID = "HR7aHbCXsJto7iS9uBkiiGJx6iGySxoNqUGQvrZfnj6B";
             foreach (string id in offerIDs)
             {
                 GetOffer_Response? offer = Offers_Client.GetOffer_Sync(id);
             }
             
             { }
+        }
+        [Fact]
+        public void TestGetOffers()
+        {
+            // own offer
+            SearchOffer_RPC rpc = new SearchOffer_RPC();
+            rpc.page_size = 50;
+           
+
+            // sample offes
+            for (int i = 0; i < 20; i++)
+            {
+                rpc.page = i;
+                GetOffers_Response? offers = Offers_Client.GetOffers_Sync(rpc);
+                { }
+            }
         }
     }
 }

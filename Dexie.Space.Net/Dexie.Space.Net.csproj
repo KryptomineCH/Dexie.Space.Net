@@ -7,14 +7,16 @@
     <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/KryptomineCH/Dexie.Space.Net</PackageProjectUrl>
     <Title>Dexie.Space.Net</Title>
-    <Version>1.1.0</Version>
+    <Version>1.8.2</Version>
     <Authors>KryptoMine.ch, Julian Bechtold</Authors>
     <Description>Dexie.Space.Net is a NuGet package designed for interacting with the decentralized Dexie.space exchange. This package provides a convenient and easy-to-use API for accessing the exchange's decentralized platform, allowing users to trade various digital assets on the blockchain in a secure and decentralized manner. With Dexie.Space.Net, developers can write code that interacts with the exchange to perform tasks such as buying and selling assets, checking the order book, and managing their own wallet. The package is built on top of the popular Dexie.space exchange, ensuring a seamless integration and enabling users to take advantage of its robust infrastructure and security features.</Description>
     <Copyright>KryptoMine.ch</Copyright>
     <RepositoryUrl>https://github.com/KryptomineCH/Dexie.Space.Net</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>api;chia;dexie;offers;exchange</PackageTags>
-    <PackageReleaseNotes>- Get_Offer way more resilient</PackageReleaseNotes>
+    <PackageReleaseNotes>- improved Get_Offer &amp; Get_Offers
+- improved unit tests
+- Sync code should now throw the proper exception instead of an aggregate exception </PackageReleaseNotes>
     <PackageLicenseExpression> MIT-Modern-Variant</PackageLicenseExpression>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>False</SignAssembly>
